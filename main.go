@@ -11,7 +11,7 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 	for {
-		fmt.Println("Enter sequence:")
+		fmt.Fprint(os.Stdout,"Enter sequence:")
 		seq, _ := reader.ReadString('\n')
 		Start(seq)
 		fmt.Fprint(os.Stdout, "Again? Y/N \n")
