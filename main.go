@@ -23,7 +23,7 @@ func main() {
 				if te == "Y\n" || te == "y\n" {
 					fmt.Fprint(os.Stdout, "Valid or invalid sequence? T/F\n")
 					form, _ := reader.ReadString('\n')
-					if form == "T\n" || form == "t\n" || form == "True\n" || form == "ture\n" {
+					if form == "T\n" || form == "t\n" || form == "True\n" || form == "true\n" {
 						fmt.Fprint(os.Stdout, "Random valid test \n")
 						str1 := randomExamples.Generate(true)
 						fmt.Fprint(os.Stdout, str1, "\n")
