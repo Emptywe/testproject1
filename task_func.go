@@ -2,6 +2,7 @@ package main
 
 import (
 	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -12,7 +13,19 @@ func testValidity(input string) bool {
 }
 
 func averageNumber(input string) int {
-	return 0
+	var resi int
+	var avg int
+
+	re, _ := regexp.Compile(`\d+`)
+
+	res := re.FindAllString(input, -1)
+	for _, v := range res {
+		t, _ := strconv.Atoi(v)
+		resi += t
+	}
+
+	avg = resi / len(res)
+	return avg
 }
 
 func wholeStory(input string) string {
