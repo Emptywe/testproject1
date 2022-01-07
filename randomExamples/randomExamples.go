@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+// O(log n)
+
 func Generate(input bool) string {
 
 	rand.Seed(time.Now().Unix())
