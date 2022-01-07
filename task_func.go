@@ -1,7 +1,14 @@
 package main
 
+import (
+	"regexp"
+	"strings"
+)
+
 func testValidity(input string) bool {
-	return true
+	input = strings.TrimSuffix(input, "\n")
+	mat, _ := regexp.Match(`^([\d]+-[a-zA-Z]+-?\b)+$`, []byte(input))
+	return mat
 }
 
 func averageNumber(input string) int {
