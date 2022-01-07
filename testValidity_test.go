@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestTestValidity(t *testing.T){
+func TestTestValidity(t *testing.T) {
 	seq1 := randomExamples.Generate(true)
 	seq2 := randomExamples.Generate(false)
 
@@ -15,11 +15,11 @@ func TestTestValidity(t *testing.T){
 	result1 := testValidity(seq1)
 	result2 := testValidity(seq2)
 
-	if expected1 != result1{
-		t.Errorf("Incorrect validation result. Expect: %v, got: %v", expected1,result1)
+	if expected1 != result1 {
+		t.Errorf("Incorrect validation result. Expect: %v, got: %v", expected1, result1)
 	}
-	if expected2 != result2{
-		t.Errorf("Incorrect validation result. Expect: %v, got: %v", expected2,result2)
+	if expected2 != result2 {
+		t.Errorf("Incorrect validation result. Expect: %v, got: %v", expected2, result2)
 	}
 
 }

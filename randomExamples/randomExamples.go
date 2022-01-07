@@ -66,7 +66,7 @@ func Generate(input bool) string {
 			}
 		}
 
-		return strings.Join(res,"-")
+		return strings.Join(res, "-")
 	}
 
 	return ""

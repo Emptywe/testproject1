@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func Start(seq string){
+func Start(seq string) {
 
 	valid := testValidity(seq)
 	if valid {
