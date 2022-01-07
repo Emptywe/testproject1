@@ -29,7 +29,19 @@ func averageNumber(input string) int {
 }
 
 func wholeStory(input string) string {
-	return ""
+	var words string
+
+	re, _ := regexp.Compile(`[a-zA-Z]+`)
+
+	res := re.FindAllString(input, -1)
+	for i, v := range res {
+		if i == len(res)-1 {
+			words += v
+			break
+		}
+		words += v + " "
+	}
+	return words
 }
 
 func storyStats(input string) *Stats {

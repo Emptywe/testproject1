@@ -16,6 +16,7 @@ func main(){
 	if valid {
 		fmt.Fprint(os.Stdout, "Validation: true\n")
 		fmt.Fprint(os.Stdout, "Average number: ", averageNumber(seq), "\n")
+		fmt.Fprint(os.Stdout, "Words: ", wholeStory(seq), "\n")
 	} else {
 		fmt.Fprint(os.Stdout, "Validation: false\n")
 	}
