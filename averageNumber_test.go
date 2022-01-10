@@ -5,7 +5,7 @@ import "testing"
 func TestAverageNumber(t *testing.T) {
 
 	seq := "1-Hello-2-World-3-Test-4-Run"
-	expected := 2
+	expected := 2.5
 
 	result := averageNumber(seq)
 
