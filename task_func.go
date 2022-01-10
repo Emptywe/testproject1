@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math"
 	"regexp"
 	"sort"
 	"strconv"
@@ -17,19 +18,19 @@ func testValidity(input string) bool {
 
 // O(n)
 // 15 min
-func averageNumber(input string) int {
-	var resi int
-	var avg int
+func averageNumber(input string) float64 {
+	var resi float64
+	var avg float64
 
 	re, _ := regexp.Compile(`\d+`)
 
 	res := re.FindAllString(input, -1)
 	for _, v := range res {
 		t, _ := strconv.Atoi(v)
-		resi += t
+		resi += float64(t)
 	}
 
-	avg = resi / len(res)
+	avg = resi / float64(len(res))
 	return avg
 }
 
@@ -55,10 +56,12 @@ func wholeStory(input string) string {
 // 15 min
 func storyStats(input string) *Stats {
 	var st Stats
+	st.avgWordLength = make([]float64, 2)
 	words := wholeStory(input)
 	wordsArr := strings.Fields(words)
 
 	var avgCount int
+	var avgLen float64
 
 	for i, v := range wordsArr {
 		if i == 0 {
@@ -78,10 +81,13 @@ func storyStats(input string) *Stats {
 		}
 
 	}
-	st.avgWordLength = avgCount / len(wordsArr)
+	avgLen = float64(avgCount) / float64(len(wordsArr))
+
+	st.avgWordLength[0] = math.Floor(avgLen)
+	st.avgWordLength[1] = math.Ceil(avgLen)
 
 	for _, v := range wordsArr {
-		if len(v) == st.avgWordLength {
+		if len(v) == int(st.avgWordLength[0]) || len(v) == int(st.avgWordLength[1]) {
 			st.avgList = append(st.avgList, v)
 		}
 	}

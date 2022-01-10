@@ -15,7 +15,7 @@ func Start(seq string) {
 		fmt.Fprint(os.Stdout, "Words: ", wholeStory(seq), "\n")
 		stat := storyStats(seq)
 		fmt.Fprintf(os.Stdout, "Story Stats:\nShortest word: %s\nLongest word: %s\n"+
-			"Averege letter in word number: %d\nAverege words:\n%s\n", stat.shortestWord, stat.longestWord, stat.avgWordLength, strings.Join(stat.avgList, "\n"))
+			"Averege letter in word number: %v - %v\nAverege words:\n%s\n", stat.shortestWord, stat.longestWord, stat.avgWordLength[0], stat.avgWordLength[1], strings.Join(stat.avgList, "\n"))
 	} else {
 		fmt.Fprint(os.Stdout, "Validation: false\n")
 	}

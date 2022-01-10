@@ -3,6 +3,6 @@ package main
 type Stats struct {
 	shortestWord  string
 	longestWord   string
-	avgWordLength int
+	avgWordLength []float64
 	avgList       []string
 }
