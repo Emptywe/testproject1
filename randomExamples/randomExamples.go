@@ -8,6 +8,7 @@ import (
 )
 
 // O(log n)
+// 30 min
 
 func Generate(input bool) string {
 

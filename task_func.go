@@ -8,7 +8,7 @@ import (
 )
 
 // O(n)
-
+// 50 min
 func testValidity(input string) bool {
 	input = strings.TrimSuffix(input, "\n")
 	mat, _ := regexp.Match(`^([\d]+-[a-zA-Z]+-?\b)+$`, []byte(input))
@@ -16,7 +16,7 @@ func testValidity(input string) bool {
 }
 
 // O(n)
-
+// 15 min
 func averageNumber(input string) int {
 	var resi int
 	var avg int
@@ -34,7 +34,7 @@ func averageNumber(input string) int {
 }
 
 // O(log n)
-
+// 15 min
 func wholeStory(input string) string {
 	var words string
 
@@ -52,7 +52,7 @@ func wholeStory(input string) string {
 }
 
 // O(log n)
-
+// 15 min
 func storyStats(input string) *Stats {
 	var st Stats
 	words := wholeStory(input)
